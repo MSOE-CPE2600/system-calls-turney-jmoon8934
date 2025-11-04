@@ -44,6 +44,27 @@ int main(int argc, char* argv[])
 
     //return the scheduling policy of the process specified by pid. PID is confirmed to exist by this point.
     int sched = sched_getscheduler(pid);
-    
+    char *scheduling_type;
+    switch(sched)
+    {
+        case SCHED_OTHER:
+            scheduling_type = "SCHED_OTHER, standard round robin";
+            break;
+        case SCHED_BATCH:
+            scheduling_type = "SCHED_BATCH, batch style execution";
+            break;
+        case SCHED_IDLE:
+            scheduling_type = "SCHED_IDLE, very low priority background job";
+            break;
+        case SCHED_FIFO:
+            scheduling_type = "SCHED_FIFO, first in, first out policy";
+            break;
+        case SCHED_RR:
+            scheduling_type = "SCHED_RR, round robin policy";
+            break;
+        default:
+            scheduling_type = "INVALID, invalid scheduling type";
+    }
+    printf("The process scheduling type is %s\n", scheduling_type);
     return 0;
 }
