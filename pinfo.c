@@ -2,7 +2,7 @@
 * Filename: info.c
 * Author: Jeric Moon
 * Date: 10/30/2025
-* Desc: Lab9 System Calls Part 1
+* Desc: Lab9 System Calls Part 2 
 ****************************************************************************/
 #define _GNU_SOURCE
 #include <stdio.h>
